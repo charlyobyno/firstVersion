@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en-Us">
+<head>
+    <title>Mr Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script 
+     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "330px";
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
+    
+    <!--Border bottom DOM-->
+<script>
+    function myFunction() {
+  
+     document.getElementById("myDiv").style.borderBottom = "1.5px solid red";
+    }   
+</script>
+
+<!--Scroll up  script section-->
+<script>
+    // When the user scrolls down 400px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<style>
+    .flexC1 {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(7, 7, 34);
+        padding: 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    .fa-bars {
+        color: white;
+    }
+    .mrhome {
+        color: white;
+        margin-left: 50%;
+        font: bold;
+        font-size: 25px;
+    }
+    .login {
+        border-top: 1px solid  rgb(39, 39, 189);
+        background-color: rgb(7, 7, 34);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: sticky;
+        top: 77px;
+        z-index: 1;
+    }
+    .bgimgContainer {
+        position: relative;
+        top: -40px;
+        
+}
+
+    .bgimgContainer .bgimgContent {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        width: 100%;
+        padding: 10px;
+    }
+    .bgimg {
+        width: 100%;
+}
+    img {
+   max-width: 100%;
+   
+}
+    .selectDiv {
+        width: 90%;
+        margin: 80px 0 0 20px;
+}
+.fa-home, .fa-bullhorn, .fa-institution, .fa-shopping-bag, .fa-credit-card, .fa-handshake-o, 
+.fa-map-marker {
+    color: black;
+    font-size: 24px;
+}
+
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(7, 7, 34);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.gridCo > div {
+    color: white
+}
+.flexCs {
+    display: flex;
+    flex-flow: row;
+    color: white;
+}
+.flexCs > i {
+    margin-right: 10px;
+}
+.flexCf {
+    display: flex;
+    flex-flow: row;
+    background: red;
+}
+.flexCf > a {
+    margin-right: 5px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.modalSignin{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: white;
+    color: black;
+    padding: 20px;
+    
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Set a style for Login button */
+.loginBtn {
+    color: white;
+    padding: 8px 8px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    opacity: 0.8;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* Modal Content/Box */
+.modal-contentIn {
+
+    margin: 10px auto 20px auto; /* 10px from the top, 20px from the bottom and centered */
+    
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 5px 0;
+    border-radius: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.3s;
+    animation: animatezoom 0.3s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+/* Sign Up Section*/
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Float cancel-and-signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+  height: 50px;
+}
+
+.modal-contentUp {
+    margin: 10px auto 20px auto; /* 10px from the top, 20px from the bottom and centered */
+    
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 5px 0;
+    border-radius: 10px;
+}
+
+ /* The Close Button (x) */
+.closeUp {
+    position: absolute;
+    right: 38px;
+    top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*FlipCard Section*/
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+  font-size: 12px;
+}
+
+.pagination a{
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    margin-top: 25px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+.pagination a:active:not(.active)
+{background-color: #ddd;}
+
+.commentsLogo {
+    position: fixed;
+    bottom: 55px;
+    right: 10px;
+    animation: mymove 2s infinite;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding-top: 12px;
+    cursor: pointer;
+}
+@keyframes mymove {
+        100% {border: 5px solid lightblue;}
+}
+.commentsDiv {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: #ccc;
+}
+ .commentsLabel {
+     text-align: center;
+     padding: 5px;
+ }
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 2px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
+
+</style>
+</head>
+
+<body>
+    <div class="flexC1">
+        <div class="container" onclick="openNav()"><i class="fa fa-bars fa-2x"></i></div>
+                    
+                
+        <div class="mrhome"><span class="fa fa-globe">mrhome</span></div>
+    </div>
+    <div class="login"><i class="fa fa-user-o"></i><a href="#" class="signIn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> Login/Register</a></div><br><br>
+                
+                
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-remove"></i></a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+        
+      </div>
+        
+                  
+                  
+                
+    <div class="bgimgContainer">
+        <img src="homerepair.jpeg" alt="img" class="bgimg">
+        <div class="bgimgContent">
+            <h3 style="color:tan; text-align:center; margin-top: 50px;"><b>MEET OUR PRO HOME SERVICE PROVIDERS WITH EASE</b></h3>             
+                                    
+                 <!--Filter Section-->
+    <form action="/action_page.php" class="selectDiv">
+        <div class="form-group1">
+        <select ng-model="myVar" class="form-control">
+          <option value="">Select City</option>
+          <option value="1">Abuja</option>
+          <option value="2">lagos</option>
+          <option value="3">Port Harcourt</option>
+          <option value="4">Benin City</option>
+          <option value="5">Awka</option>
+          <option value="6">Asaba</option>
+          <option value="7">Owerri</option>
+          <option value="8">Umuahia</option>
+          <option value="9">Kano</option>
+          <option value="10">Katsina</option>
+          <option value="11">Kebbi</option>
+          <option value="12">Kaduna</option>
+          <option value="13">Lokoja</option>
+          <option value="14">Ebonyi</option>
+          <option value="15">Enugu</option>
+          <option value="16">Dutse</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+            <select ng-model="myVar" class="form-control">
+              <option value="">What Service do you need?</option>
+              <option value="1">Painter</option>
+          <option value="2">Interior Decor</option>
+          <option value="3">Tiler</option>
+          <option value="4">Furniture maker</option>
+          <option value="5">Mason</option>
+          <option value="6">3D Epoxy Floor/Wall/Ceiling Installer</option>
+          <option value="7">Stamped-concrete Installer</option>
+          <option value="8">Reflector Floor Installer</option>
+          <option value="9">Other decorative Floors</option>
+          <option value="10">POP Installer</option>
+          <option value="11">Artist</option>
+          <option value="12">Electrician</option>
+          <option value="13">Car Porte Installer</option>
+          <option value="14">Roofer</option>
+          <option value="15">Designers</option>
+          <option value="16">Door/Gate Builders</option>
+          <option value="1">Electrical</option>
+          <option value="1">Pest control</option>
+        </select>
+        </div>
+    </form>    
+    </div>
+</div>
+
+    <h3 style="color: red; text-align:center; margin-top:30px;"><b>OUR SERVICES</b></h3>
+      
+<div id="demo" class="carousel slide mt-3" data-ride="carousel" style="text-align:center;">
+        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+           <a href="#"><img src="New Doc 2018-11-04_1.jpg" alt="Los Angeles" height="400"></a>   
+          </div>
+          
+          <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_2.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_3.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_4.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_5.jpg" alt="Los Angeles"  height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_6.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_7.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_8.jpg" alt="Los Angeles" height="400"></a>   
+           </div>
+           <div class="carousel-item">
+            <a href="#"><img src="New Doc 2018-11-04_9.jpg" alt="Los Angeles"  height="400"></a>   
+           </div>
+        </div>
+        <a class="carousel-control-prev bg-danger" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next bg-danger" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div><br><br> 
+      
+      <div style="text-align:center; color:red; padding: 30px;background: peachpuff;"><b><h3>LARGEST HOME SERVICE PROVIDER</h3></b></div>
+      <div style="background:orangered; text-align:center; padding:30px;">
+          <i class="fa fa-support fa-4x"></i><span><h2><b style="color:white;">24/7</b></h2><h3><b>ONLINE SUPPORT</b></h3></span>
+          <i class="fa fa-phone-square fa-4x"></i><span><h4><b  style="color:white;">call us toll free: </b></h2><h4><b>2347037833007</b></h3></span>
+      </div>
+      <div style="text-align:center; color:red; font-size: 30px; margin-top: 30px;"><b>HOW IT WORKS</b></div>
+      <img alt="img" src="New Doc 2018-11-03 (1)_2.jpg" style="width: 150px;" class="mx-auto d-block">
+      <div style="text-align:center"><b>Seamlessly check all our services</b></div><br><br>
+      <img alt="img" src="New Doc 2018-11-03 (2)_1.jpg" style="width: 150px;" class="mx-auto d-block">
+      <div style="text-align:center;"><b>You can book any of our services now</b></div><br><br>
+      <img alt="img" src="New Doc 2018-11-03_1.jpg" style="width: 150px;" class="mx-auto d-block">
+      <div style="text-align:center;"><b>Issues are resolved 24/7</b></div><br><br>
+      <img alt="img" src="New Doc 2018-11-03 (1)_3.jpg" style="width: 150px;" class="mx-auto d-block">
+      <div style="text-align: center;"><b>You can shedule a Service by visiting us</b></div><br><br><br>
+      
+
+
+<div class="bgimgContainer">
+    <img src="images (4).jpeg" alt="img" class="bgimg">
+    <div class="bgimgContent" style="padding:30px;">
+        <h3 style="color:tan; text-align:center; margin-top: 50px; margin-top: 20%;"><b>Exceptional quality Service that makes Life Easy</b></h3><br><br>
+        <button style="background:red; color:white; padding: 5px; width: 100px; margin-left: 40%;" class="btn">Read More</button>             
+</div>
+</div>
+
+<div style="background: tan; text-align: center; padding: 30px;"> 
+<div style="color:red; font-size: 24px;"><b>GET THE APP</b></div><br>
+<div class=" mx-auto d-block" style="background:black; width: 80px; padding: 5px; border-radius: 4px;"><i class="fa fa-download fa-3x text-white"></i></div>
+<div style="color: black;">Download the App and manage your services on the go</div><br><br>
+<img alt="img" src="New Doc 2018-11-05_1.jpg" width="150px"><br><br>
+<img alt="img" src="New Doc 2018-11-05_2.jpg"  width="150px"><br><br><br>
+<button style="background:red; color:white; padding: 5px; width: 100px; width: 130px;" class="btn mx-auto d-block">Read More</button>
+</div>
+
+<div style="text-align:center; padding: 40px;">
+<i class="fa fa-certificate fa-3x text-danger"></i><br>
+<span>Verified Professionals</span><br><br>
+<i class="fa fa-calendar-check-o fa-3x text-danger"></i><br>
+<span>Insured Work</span><br><br>
+<i class="fa fa-diamond fa-3x text-danger"></i><br>
+<span>Satisfaction Guaranteed</span><br><br>
+<i class="fa fa-credit-card text-danger" style="font-size:40px;"></i><br>
+<span>Easy Payment</span><br><br>
+</div>
+
+<!--Meet The Develeper-->
+<div class="flip-card mt-3 mb-3   mx-auto d-block">
+    <div class="flip-card-inner">
+      <div class="flip-card-front pt-5">
+              <h1><span style="text-align:center"><code>MEET THE DEVELOPER</code></span></h1>
+      </div>
+      <div class="flip-card-back">
+              <div class="card bg-primary text-white">
+                      <img src="DSCN9957.JPG.jpg" alt="Avatar" style="width:200px;height:150px; border-bottom: 2px solid red;">
+                      <h5 class="mt-1">Obinna Akamadu</h5>
+                      <p class="title text-danger">UI/UX Web Application Developer/Designer</p>
+                      <p>Skilled in HTML5, CSS3, JavaScript, AngularJS, Bootstrap, JSON, NodeJS, AJAX</p>
+                      <p><button class="btn">Contact</button></p>
+              </div>
+      </div>
+    </div>
+  </div>
+  
+  
+<!--Pagination section-->  
+<div class="pagination mb-5 ml-2">
+    <a href="">&laquo;</a>
+    <a href="" class="active">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+    <a href="">6</a>
+    <a href="">7</a>
+    <a href="">8</a>
+    <a href="">&raquo;</a>
+</div>
+
+
+<div class="gridCo" style="background: red; padding: 40px 10px 30px 10px;">
+   <span style="color:tan; font-size: 24px; border-bottom: 1px solid rgb(207, 76, 76);"><b>QUICK LINKS</b></span><br><br>
+   <div><i class="fa fa-angle-double-right"> Home</i></div>
+   <div><i class="fa fa-angle-double-right"> About</i></div>
+   <div><i class="fa fa-angle-double-right"> Blog</i></div>
+   <div><i class="fa fa-angle-double-right"> For Corporate</i></div>
+   <div><i class="fa fa-angle-double-right"> Careers</i></div>
+   <div><i class="fa fa-angle-double-right"> Contact</i></div>
+   <div><i class="fa fa-angle-double-right"> Terms of Service</i></div>
+   <div><i class="fa fa-angle-double-right"> Private Policy</i></div>
+   <div><i class="fa fa-angle-double-right"> Unsubscribe</i></div>
+   <div><i class="fa fa-angle-double-right"> Download</i></div>
+   <div><i class="fa fa-angle-double-right"> Partner With Us</i></div>
+</div>
+
+<div class="gridCo" style="background: red; padding: 40px 10px 30px 10px;">
+<span style="color:tan; font-size: 24px; border-bottom: 1px solid rgb(207, 76, 76);"><b>OUR SERVICES</b></span><br><br>
+<div><i class="fa fa-angle-double-right"> Cleaning</i></div>
+<div><i class="fa fa-angle-double-right"> Pest Control</i></div>
+<div><i class="fa fa-angle-double-right"> Electrical</i></div>
+<div><i class="fa fa-angle-double-right"> Pluming</i></div>
+<div><i class="fa fa-angle-double-right"> Appliance Services</i></div>
+<div><i class="fa fa-angle-double-right"> Carpentry</i></div>
+<div><i class="fa fa-angle-double-right"> Painting</i></div>
+<div><i class="fa fa-angle-double-right"> Home Security</i></div>
+<div><i class="fa fa-angle-double-right"> Gesyer</i></div>
+<div><i class="fa fa-angle-double-right"> Computer Repair</i></div>
+</div>
+
+<div class="gridCo" style="background: red; padding: 40px 10px 30px 10px;">
+    <span style="color:tan; font-size: 24px;"><b>FOLLOW US</b></span><br><br>
+
+<div>
+    <div class="input-group">
+        <input class="form-control" placeholder="Enter email address">
+        <div class="input-group-append"><button class="btn btn-success" type="submit">SUBMIT</button></div>
+    </div>
+</div> <br>
+<div class="flexCs">
+    <i class="fa fa-facebook fa-2x"></i>
+    <i class="fa fa-twitter fa-2x"></i>
+    <i class="fa fa-linkedin fa-2x"></i>
+    <i class="fa fa-pinterest fa-2x"></i>
+    <i class="fa fa-youtube fa-2x"></i>
+</div> 
+</div>
+<div class="flexCf" style="border-top:1px solid rgb(194, 108, 108); padding: 20px;"><br><br>
+    <a href="">About us |</a> 
+    <a href="">Privacy |</a>
+    <a href="">FAQ |</a>
+    <a href="">Terms of Use |</a>
+    <a href="">Contact </a>
+    <a href="">Blog</a> 
+</div>
+
+<div style="background: #333333; padding: 30px; color: white;">
+    Copyright 2015-2019 © mrhome.com. All Right Reserved.
+</div> 
+
+
+<div id="id01" class="modalSignin container">
+    
+    <div style="background: red; color:black;" >
+            
+        
+
+            <div id="demo" class="carousel slide mx-auto d-block" data-ride="carousel">
+
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                      <li data-target="#demo" data-slide-to="0" class="active"></li>
+                      <li data-target="#demo" data-slide-to="1"></li>
+                      <li data-target="#demo" data-slide-to="2"></li>
+                      <li data-target="#demo" data-slide-to="3"></li>
+                    </ul>
+                    
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active" style="text-align:center; color: white; padding: 40px;">
+                            <i class="fa fa-certificate fa-2x"></i><br><br>
+                            <span>Verified Professionals</span><br>
+                      </div>
+                      <div class="carousel-item" style="text-align:center;color: white; padding: 40px;">
+                            <i class="fa fa-calendar-check-o fa-2x"></i><br><br>
+                            <span>Insured Work</span><br>   
+                      </div>                 
+                      <div class="carousel-item" style="text-align:center;color: white; padding: 40px;">
+                            <i class="fa fa-diamond fa-2x"></i><br><br>
+                            <span>Satisfaction Guaranteed</span><br>
+                      </div>
+                      <div class="carousel-item" style="text-align:center;color: white; padding: 40px;">
+                            <i class="fa fa-credit-card" style="font-size:40px; color: white;"></i><br><br>
+                            <span>Easy Payment</span><br>
+                      </div>
+                    </div>
+                  </div>
+                    
+        </div>
+
+                    
+    <!-- Nav pills -->
+    <ul class="nav nav-pills" role="tablist" style="margin:30px 0 0 0;">
+      <li class="nav-item">
+        <a class="nav-link  active" data-toggle="pill" href="#home">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="pill" href="#menu1">signUp</a>
+      </li>
+     
+    </ul>
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="home" class="tab-pane active"><br>
+       
+        <form class="modal-contentIn animate" action="/action_page.php">
+        <div class="containerF">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+          <label for="psw"><b>Password</b></label>
+          <input type="password" id="myInput" placeholder="Enter Password" name="psw" required>
+          <input type="checkbox" onclick="myPwVisibility()">Show Password
+            
+          <button type="submit" class="btn loginBtn btn-primary">Login</button>
+          <label style="margin-bottom: 30px">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            <div>By Logging in, you agree to our<span class="text-danger"> T&C</span> and<span class="text-danger">  Privacy Policy</span></div>
+          </label>
+        </div>
+    
+        <div style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+</div>
+      <div id="menu1" class="container tab-pane fade"><br>
+        
+            <form class="modal-contentUp animate" action="/action_page.php">
+              <div class="containerUp">
+              <input type="text" placeholder="*Business Name" name="text" required>
+                <input type="text" placeholder="*Email" name="text" required>
+                <input type="text" placeholder="*State" name="text" required>
+                <input type="text" placeholder="*Phone Number" name="tel" required>
+                <input type="text" placeholder="*Email" name="email" required>
+                <input type="password" placeholder="*Password" name="psw" required>
+                <input type="password" placeholder="*Repeat Password" name="psw-repeat" required>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                </label>
+                <label>Upload one sample picture of your Work. Accepted formats are: png, gif, jpg. Max allowed size for upload is 5MB</label>
+                <input type="file" name="filename">
+                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                <div class="clearfix mt-1">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn btn">Cancel</button>
+                  <button type="submit" class="signupbtn btn btn-primary">Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+      </div>
+      
+    </div>
+  
+  <!--scroll to top Section-->
+<p id="demo"></p>
+<button onclick="topFunction()" id="myBtn"><i class="fa fa-arrow-up fa-2x"></i></button>
+
+<!--comments section-->
+<div class="commentsLogo bg-primary" onclick="document.getElementById('myId').style.display='block'">
+    <i class="fa fa-comments fa-3x text-white"></i>
+</div>
+        <div id="myId" class="commentsDiv container-fluid">
+            <form action="/action_page.php" class="animate">
+            <div class="flex-containerComments form-group text-white">
+                <div class="bg-primary commentsLabel">
+                <div class="closeDiv"><a href="" class="close closeT" onclick="document.getElementById('myId').style.display='none'">&times;</a></div><br>
+                <div>Online</div><br>
+                <div><label>Welcome to MrHomes! Please fill out the form below to start chatting with the next available agent.</label></div>
+                </div><br><br><br>
+                <div><input class="form-control input1" placeholder="*Name" type="text"></div><br>
+                <div><input class="form-control input1" placeholder="*Email" type="email"></div><br>
+                <div><input class="form-control input1" placeholder="Phone number" type="tel"></div><br>
+                <div><textarea rows="5" class="form-control input1" placeholder="Question" type="text"></textarea></div><br>
+                <div><button class="btn btn-primary btnCss input1" type="submit">Start Chat</button></div> 
+            </div>
+            </form>
+        </div> 
+
+</body>
+</html>
+
+
+    
